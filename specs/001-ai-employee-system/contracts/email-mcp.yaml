@@ -1,0 +1,123 @@
+# API Contract: MCP Email Server Interface
+
+**Date**: 2026-02-24
+**Feature**: 001-ai-employee-system
+**Status**: Draft
+
+## Overview
+
+This contract defines the interface between Claude Code and the email-mcp server, enabling Claude to send emails while maintaining the constitutional requirement for modular layered architecture.
+
+## Endpoints
+
+### `/send_email`
+
+**Purpose**: Send an email message through the MCP server
+
+#### Request
+
+```json
+{
+  "method": "send_email",
+  "params": {
+    "to": ["recipient@example.com"],
+    "subject": "Email subject",
+    "body": "Email body content",
+    "cc": ["cc@example.com"],
+    "bcc": ["bcc@example.com"],
+    "attachments": [
+      {
+        "filename": "document.pdf",
+        "content": "base64-encoded-content"
+      }
+    ]
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "result": {
+    "message_id": "unique-message-id",
+    "status": "sent",
+    "timestamp": "2026-02-24T12:00:00Z"
+  },
+  "error": null
+}
+```
+
+### `/search_emails`
+
+**Purpose**: Search emails in the mailbox
+
+#### Request
+
+```json
+{
+  "method": "search_emails",
+  "params": {
+    "query": "from:sender@example.com subject:urgent",
+    "limit": 10,
+    "after_date": "2026-01-01"
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "result": {
+    "emails": [
+      {
+        "id": "email-id-1",
+        "subject": "Subject line",
+        "from": "sender@example.com",
+        "date": "2026-02-24T10:00:00Z",
+        "snippet": "Brief preview of email content"
+      }
+    ]
+  },
+  "error": null
+}
+```
+
+## Error Handling
+
+### Standard Error Format
+
+```json
+{
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human-readable error message",
+    "details": {
+      "technical_details": "Additional technical information"
+    }
+  }
+}
+```
+
+### Common Error Codes
+
+- `EMAIL_SEND_FAILED`: Unable to send email due to SMTP error
+- `AUTHENTICATION_ERROR`: Invalid credentials
+- `RATE_LIMIT_EXCEEDED`: API rate limit exceeded
+- `INVALID_RECIPIENT`: Invalid email address format
+- `QUOTA_EXCEEDED`: Storage or sending quota exceeded
+
+## Security Requirements
+
+- All requests must be authenticated using OAuth2 or API key
+- Sensitive data must be encrypted in transit using TLS
+- Audit logs must be created for all email operations
+- DRY_RUN mode must be respected when enabled
+
+## Validation Rules
+
+- Email recipients must be validated for proper format
+- Subject and body length must not exceed SMTP server limits
+- Attachments must not exceed size limitations
+- Email sending frequency must respect rate limits

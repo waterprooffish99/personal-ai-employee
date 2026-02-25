@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ENV
+.ENV.db/
+.python-version
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pyre/
+.pytype/
+.ipynb_checkpoints/
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Project specific
+.env
+.env.local
+.env.*.local
+*.env
+.env*
+.env*.*
+.envrc
+
+# Logs
+*.log
+logs/
+logs/*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+*.nfs*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# User-specific settings
+config/
+settings.json
+
+# Local vault
+AI_Employee_Vault/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.sass-cache/
+
+# Database
+*.db
+*.db-journal
+
+# Documentation
+docs/_build/
+
+# Security
+*.pem
+*.key
+*.crt
+*.cert
+*.secret
+*.token

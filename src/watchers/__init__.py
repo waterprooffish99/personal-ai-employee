@@ -1,0 +1,1 @@
+"""Watcher components for the AI Employee System"""

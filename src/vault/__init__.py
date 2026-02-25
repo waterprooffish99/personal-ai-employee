@@ -1,0 +1,1 @@
+"""Vault management for the AI Employee System"""
