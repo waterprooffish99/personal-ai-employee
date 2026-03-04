@@ -1,0 +1,227 @@
+{
+  "main": {
+    "id": "f436aa0416a54a8c",
+    "type": "split",
+    "children": [
+      {
+        "id": "c33bf75e1383c762",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3567cc3bbaecc62b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Briefings/Monday_Morning_Briefing_2026-03-03.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Monday_Morning_Briefing_2026-03-03"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "02458e3aacaf6350",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a07fef053860592",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e0f266d50533eafb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "abc6acafa8c0041d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d54f03715cb50c71",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 298.5
+  },
+  "right": {
+    "id": "51c2073f3335fee6",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d559f0d6b5d4a97",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0f50ffdd3d2a23d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Briefings/Monday_Morning_Briefing_2026-03-03.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Monday_Morning_Briefing_2026-03-03"
+            }
+          },
+          {
+            "id": "ceb68a2051be67e2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Dashboard.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Dashboard"
+            }
+          },
+          {
+            "id": "7d32b596f1fb59fc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "62ff2dd8c2fbebde",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "d7965f78a998a20d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Dashboard.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Dashboard"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3567cc3bbaecc62b",
+  "lastOpenFiles": [
+    "Done/action_test_task_1772563975.md",
+    "In_Progress/CloudAgent/test_task.md",
+    "Dashboard.md",
+    "Pending_Approval/whatsapp_Me_On_Onic_2026-03-03_23-52-19.md",
+    "Plans/plan_whatsapp_Me_On_Onic_2026-03-03_23-52-19.md",
+    "In_Progress/CloudAgent/whatsapp_Me_On_Onic_2026-03-03_23-52-19.md",
+    "Pending_Approval/whatsapp_Me_On_Onic_2026-03-03_23-51-11.md",
+    "Plans/plan_whatsapp_Me_On_Onic_2026-03-03_23-51-11.md",
+    "In_Progress/CloudAgent/whatsapp_Me_On_Onic_2026-03-03_23-51-11.md",
+    "Needs_Action/email_1772574374_clickworker.md",
+    "Needs_Action/email_1772574373_LinkedIn messages-noreply.md",
+    "Needs_Action/email_1772574372_It's Josh from The Nerd Nook thenerdnook.md",
+    "Needs_Action/email_1772574372_LinkedIn notifications-noreply.md",
+    "Needs_Action/email_1772574370_LinkedIn updates-noreply.md",
+    "Needs_Action/email_1772574370_Glassdoor Jobs noreply.md",
+    "Needs_Action/email_1772574369_DigitalOcean team.md",
+    "Needs_Action/email_1772574368_TAAFT - There's An AI For That hi.md",
+    "Needs_Action/email_1772574367_Sapience Institute  Sapience Academy info.md",
+    "Pending_Approval/whatsapp_Me_On_Onic_2026-03-03_23-50-04.md",
+    "Plans/plan_whatsapp_Me_On_Onic_2026-03-03_23-50-04.md",
+    "In_Progress/CloudAgent/whatsapp_Me_On_Onic_2026-03-03_23-50-04.md",
+    "Pending_Approval/whatsapp_Me_On_Onic_2026-03-03_23-48-56.md",
+    "Plans/plan_whatsapp_Me_On_Onic_2026-03-03_23-48-56.md",
+    "Pending_Approval/whatsapp_Me_On_Onic_2026-03-03_23-47-48.md",
+    "Plans/plan_whatsapp_Me_On_Onic_2026-03-03_23-47-48.md",
+    "Needs_Action/email_1772574301_clickworker.md",
+    "In_Progress/CloudAgent",
+    "In_Progress",
+    "Logs/2026-03-04.json",
+    "Logs/debug_whatsapp_error.png",
+    "Logs/debug_whatsapp.png",
+    "whatsapp_login.png",
+    "Logs/2026-03-03.json",
+    "Pending_Approval/test.text",
+    "Done/hello_haadi.text",
+    "Needs_Action/test.text",
+    "Needs_Action/hello_haadi.text",
+    "Inbox/test.text",
+    "Inbox/hello_haadi.text"
+  ]
+}

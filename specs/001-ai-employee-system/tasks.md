@@ -81,12 +81,12 @@ description: "Task list for Personal AI Employee System implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Implement GmailWatcher to monitor unread important emails in src/watchers/gmail_watcher.py
-- [ ] T020 [P] [US2] Implement WhatsAppWatcher using Playwright in src/watchers/whatsapp_watcher.py
-- [ ] T021 [US2] Integrate email-mcp server for Claude to call MCP tools for external actions
-- [ ] T022 [US2] Build HITL workflow logic where Claude writes sensitive requests to /Pending_Approval
-- [ ] T023 [US2] Implement orchestrator logic to execute MCP action when file is moved to /Approved
-- [ ] T024 [US2] Create skill for generating LinkedIn post drafts based on business activity
+- [x] T019 [P] [US2] Implement GmailWatcher to monitor unread important emails in src/watchers/gmail_watcher.py
+- [x] T020 [P] [US2] Implement WhatsAppWatcher using Playwright in src/watchers/whatsapp_watcher.py
+- [x] T021 [US2] Integrate email-mcp server for Claude to call MCP tools for external actions
+- [x] T022 [US2] Build HITL workflow logic where Claude writes sensitive requests to /Pending_Approval
+- [x] T023 [US2] Implement orchestrator logic to execute MCP action when file is moved to /Approved
+- [x] T024 [US2] Create skill for generating LinkedIn post drafts based on business activity
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -100,10 +100,10 @@ description: "Task list for Personal AI Employee System implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] Implement Ralph Wiggum Stop hook pattern for multi-step task iteration
-- [ ] T026 [US3] Build Odoo MCP server to interface with Odoo Community via JSON-RPC in src/mcp/mcp_servers/odoo_mcp.py
-- [ ] T027 [US3] Implement CEO Briefing weekly audit logic that reads transaction data and generates Monday_Morning_Briefing.md
-- [ ] T028 [US3] Add with_retry decorator for exponential backoff and graceful degradation when APIs are unreachable
+- [x] T025 [US3] Implement Ralph Wiggum Stop hook pattern for multi-step task iteration
+- [x] T026 [US3] Build Odoo MCP server to interface with Odoo Community via JSON-RPC in src/mcp/mcp_servers/odoo_mcp.py
+- [x] T027 [US3] Implement CEO Briefing weekly audit logic that reads transaction data and generates Monday_Morning_Briefing.md
+- [x] T028 [US3] Add with_retry decorator for exponential backoff and graceful degradation when APIs are unreachable
 - [ ] T029 [US3] Create subscription audit logic to identify unused or duplicate software costs
 
 **Checkpoint**: All user stories should now be independently functional
@@ -118,11 +118,11 @@ description: "Task list for Personal AI Employee System implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Configure project for deployment on Cloud VM in deployment/ directory
-- [ ] T031 [US4] Implement Git-based synchronization with secrets isolation for .env and tokens
-- [ ] T032 [US4] Implement "claim-by-move" rule to prevent agents from duplicating work
-- [ ] T033 [US4] Create watchdog.py to monitor PIDs and auto-restart failed watcher or orchestrator processes
-- [ ] T034 [US4] Implement domain ownership logic (Cloud drafts emails; Local executes payments)
+- [x] T030 [US4] Configure project for deployment on Cloud VM in deployment/ directory
+- [x] T031 [US4] Implement Git-based synchronization with secrets isolation for .env and tokens
+- [x] T032 [US4] Implement "claim-by-move" rule to prevent agents from duplicating work
+- [x] T033 [US4] Create watchdog.py to monitor PIDs and auto-restart failed watcher or orchestrator processes
+- [x] T034 [US4] Implement domain ownership logic (Cloud drafts emails; Local executes payments)
 
 **Checkpoint**: All user stories should now be complete with cloud capabilities
 
@@ -139,7 +139,7 @@ description: "Task list for Personal AI Employee System implementation"
 - [ ] T039 Security hardening and validation of credential isolation
 - [ ] T040 Run quickstart.md validation to ensure complete setup flow works
 - [ ] T041 Create Business_Goals.md for tracking objectives
-- [ ] T042 Implement cron/scheduler integration for automated tasks
+- [x] T042 Implement cron/scheduler integration for automated tasks
 - [ ] T043 Final verification that all actions create JSON logs in /Logs
 - [ ] T044 Verify Dashboard.md is updated as single source of truth
 - [ ] T045 Confirm payments >$100 are blocked by HITL as required

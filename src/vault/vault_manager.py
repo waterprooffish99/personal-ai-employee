@@ -31,6 +31,7 @@ class VaultManager:
         self.inbox_dir = self.vault_path / "Inbox"
         self.needs_action_dir = self.vault_path / "Needs_Action"
         self.plans_dir = self.vault_path / "Plans"
+        self.in_progress_dir = self.vault_path / "In_Progress"
         self.done_dir = self.vault_path / "Done"
         self.pending_approval_dir = self.vault_path / "Pending_Approval"
         self.approved_dir = self.vault_path / "Approved"
@@ -38,27 +39,34 @@ class VaultManager:
         self.logs_dir = self.vault_path / "Logs"
         self.briefings_dir = self.vault_path / "Briefings"
         self.accounting_dir = self.vault_path / "Accounting"
+        self.signals_dir = self.vault_path / "Signals"
 
         # Create directories if they don't exist
         self._create_vault_structure()
 
     def _create_vault_structure(self):
-        """Create the standard vault directory structure."""
+        """Create the standard vault directory structure with Platinum domain splits."""
         directories = [
             self.inbox_dir,
             self.needs_action_dir,
             self.plans_dir,
+            self.in_progress_dir,
             self.done_dir,
             self.pending_approval_dir,
             self.approved_dir,
             self.rejected_dir,
             self.logs_dir,
             self.briefings_dir,
-            self.accounting_dir
+            self.accounting_dir,
+            self.signals_dir
         ]
 
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=True)
+            # Create domain subdirectories for critical folders
+            if directory.name in ["Needs_Action", "Plans", "Pending_Approval"]:
+                (directory / "Personal").mkdir(parents=True, exist_ok=True)
+                (directory / "Business").mkdir(parents=True, exist_ok=True)
 
     def list_files_in_directory(self, directory: Path) -> List[Path]:
         """
@@ -102,6 +110,60 @@ class VaultManager:
     def get_rejected_files(self) -> List[Path]:
         """Get all files in the Rejected directory."""
         return self.list_files_in_directory(self.rejected_dir)
+
+    def claim_task(self, file_path: Path, agent_name: str) -> Optional[Path]:
+        """
+        Claim a task by moving it to In_Progress/<agent_name>/.
+        Implements the 'Claim-by-Move' rule for Platinum tier.
+        
+        Args:
+            file_path: Path to the task file
+            agent_name: Name of the agent claiming the task
+            
+        Returns:
+            New path of the file if successful, None otherwise
+        """
+        agent_dir = self.in_progress_dir / agent_name
+        agent_dir.mkdir(parents=True, exist_ok=True)
+        
+        destination = agent_dir / file_path.name
+        if self.move_file(file_path, destination):
+            return destination
+        return None
+
+    def vault_sync(self) -> bool:
+        """
+        Perform a Git-based vault sync.
+        STRICT Security Rule: Credentials are excluded via .gitignore.
+        
+        Returns:
+            True if sync was successful, False otherwise.
+        """
+        if is_dry_run():
+            log_action("Would perform Git-based vault sync", actor="system", result="info", dry_run=True)
+            return True
+
+        import subprocess
+        try:
+            # Sync strategy: Add changes, commit, pull rebase, push
+            subprocess.run(["git", "add", str(self.vault_path)], check=True)
+            
+            # Check if there are changes to commit
+            status = subprocess.run(["git", "status", "--porcelain", str(self.vault_path)], 
+                                   capture_output=True, text=True)
+            if not status.stdout.strip():
+                log_action("Vault sync: No changes to sync", actor="system", result="success")
+                return True
+
+            subprocess.run(["git", "commit", "-m", f"Vault sync: {datetime.now().isoformat()}"], check=True)
+            subprocess.run(["git", "pull", "--rebase"], check=True)
+            subprocess.run(["git", "push"], check=True)
+            
+            log_action("Vault sync completed successfully", actor="system", result="success")
+            return True
+        except subprocess.CalledProcessError as e:
+            log_action("Vault sync failed", actor="system", result="error", details={"error": str(e)})
+            return False
 
     def move_file(self, source: Path, destination: Path) -> bool:
         """
@@ -303,8 +365,20 @@ class VaultManager:
 
         content += """
 ### In Progress
-- No tasks in progress
+"""
 
+        # Add files in In_Progress to the dashboard
+        for agent_dir in self.in_progress_dir.iterdir():
+            if agent_dir.is_dir():
+                content += f"#### Agent: {agent_dir.name}\n"
+                agent_files = self.list_files_in_directory(agent_dir)
+                if agent_files:
+                    for file_path in agent_files:
+                        content += f"- {file_path.name}\n"
+                else:
+                    content += "- No tasks in progress\n"
+
+        content += """
 ### Completed Today
 """
 

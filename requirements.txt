@@ -1,0 +1,13 @@
+# Core dependencies
+watchdog>=3.0.0
+python-dotenv>=1.0.0
+playwright>=1.40.0
+
+# Google API dependencies for Gmail watcher
+google-api-python-client>=2.70.0
+google-auth>=2.15.0
+google-auth-oauthlib>=0.8.0
+google-auth-httplib2>=0.1.0
+
+# Testing dependencies
+pytest>=7.2.0
