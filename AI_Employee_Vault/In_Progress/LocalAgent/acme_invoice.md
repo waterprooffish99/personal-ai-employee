@@ -1,1 +1,1 @@
-Generate a business invoice for Acme Corp (00) for AI Consulting.
+Salman, bill Client A for 5000 PKR for Balochi dresses.
